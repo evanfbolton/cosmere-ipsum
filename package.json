@@ -1,0 +1,15 @@
+{
+  "name": "cosmere-ipsum",
+  "version": "1.0.0",
+  "description": "A lorem ipsum generator that uses quotes from the books in Brandon Sanderson's Cosmere universe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
