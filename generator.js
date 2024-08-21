@@ -38,7 +38,7 @@ GenerateNewText.prototype.getParagraph = function() {
     return paragraph;
 }
 
-// Method to the GenerateNewText constructor function that gerates multiple paragraphs from paragraphs
+// Method to the GenerateNewText constructor function that generates multiple paragraphs from paragraphs
 GenerateNewText.prototype.getAllParagraphs = function(numberOfParagraphs) {
     let allParagraphs = [];
     // Generate the number of paragraphs as specified by the user
