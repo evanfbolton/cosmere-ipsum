@@ -217,3 +217,4 @@ I knew you’d be impressed, Nightblood said, sounding satisfied.
 `;
 
 const warbreakerSentences = splitIntoSentences(warbreakerText);
+console.log(warbreakerSentences)

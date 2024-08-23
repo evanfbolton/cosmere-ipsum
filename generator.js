@@ -4,21 +4,14 @@
 const loremIpsum = new GenerateNewText();
 
 // Constructor function that creates an object with the sentences property
-function GenerateNewText() {
+async function GenerateNewText() {
     // Add property to the object
-    this.sentences =
-        [
-            "Awesome quote number 1.",
-            "Second awesome quote.",
-            "Yet another great quote.",
-            "Ok, last quote."
-        ];
+    this.sentences = await warbreakerSentences
 }
 
 // Method to the GenerateNewText constructor function that generates a random sentence
 GenerateNewText.prototype.getRandomSentence = function() {
-    let randomSentence = this.sentences[Math.floor(Math.random() * this.sentences.length)]
-    return randomSentence;
+    return this.sentences[Math.floor(Math.random() * this.sentences.length)];
 }
 
 // Method to the GenerateNewText constructor function that generates a paragraph from random sentences
