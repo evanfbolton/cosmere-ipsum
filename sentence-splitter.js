@@ -9,8 +9,9 @@ function splitIntoSentences(text) {
     text = text.replace(/(\r\n|\n|\r)/gm, '');
 
     // Regular expression to match sentence endings (period, exclamation mark, or question mark)
-    // followed by optional whitespace characters and then another sentence or the end of the string
-    const sentenceRegex = /(?<=[.!?])\s*/g;
+    // not followed by another period (to exclude ellipses) and followed by optional whitespace characters
+    // and then another sentence or the end of the string
+    const sentenceRegex = /(?<=[.!?])(?!\.)(?=\s|$)/g;
 
     // Split the text into sentences
     const sentences = text.split(sentenceRegex);
@@ -33,7 +34,7 @@ The large guard sauntered up to the cell door, leaving his friends to amuse them
 
 Vasher did not respond.
 
-“The bartender says you beat down some twenty men in the brawl.” The guard rubbed his chin. “You don’t look that tough to me. Either way, you should have known better than to strike a priest. The others, they’ll spend a night locked up. You, though . . . you’ll hang. Colorless fool.”
+“The bartender says you beat down some twenty men in the brawl.” The guard rubbed his chin. “You don’t look that tough to me. Either way, you should have known better than to strike a priest. The others, they’ll spend a night locked up. You, though ... you’ll hang. Colorless fool.”
 
 Vasher turned away. His cell was functional, if unoriginal. A thin slit at the top of one wall let in light, the stone walls dripped with water and moss, and a pile of dirty straw decomposed in the corner.
 
@@ -81,7 +82,7 @@ Vasher leaned down, trying not to think of the days when he’d had enough Breat
 
 Once again, he Breathed.
 
-It took the rest of his Breath. With it gone—the cloak trembling, the scarf losing the rest of its color—Vasher felt . . . dimmer. Losing one’s Breath was not fatal. Indeed, the extra Breaths Vasher used had once belonged to other people. Vasher didn’t know who they were; he hadn’t gathered these Breaths himself. They had been given to him. But, of course, that was the way it was always supposed to work. One could not take Breath by force.
+It took the rest of his Breath. With it gone—the cloak trembling, the scarf losing the rest of its color—Vasher felt ... dimmer. Losing one’s Breath was not fatal. Indeed, the extra Breaths Vasher used had once belonged to other people. Vasher didn’t know who they were; he hadn’t gathered these Breaths himself. They had been given to him. But, of course, that was the way it was always supposed to work. One could not take Breath by force.
 
 Being void of Breath did change him. Colors didn’t seem as bright. He couldn’t feel the bustling people moving about in the city above, a connection he normally took for granted. It was the awareness all men had for others—that thing which whispered a warning, in the drowsiness of sleep, when someone entered the room. In Vasher, that sense had been magnified fifty times.
 
@@ -155,7 +156,7 @@ Vahr hung by his wrists, rotating slowly. Silent.
 
 “You don’t have much time to consider,” Vasher said. “Any moment now, someone is going to discover the dead guards outside. The alarm will be raised. I’ll leave you, you will be tortured again, and you will eventually break. Then all the power you’ve gathered will go to the very people you vowed to destroy.”
 
-Vahr stared at the floor. Vasher let him hang for a few moments, and could see that the reality of the situation was clear to him. Finally, Vahr looked up atVasher. “That . . . thing you bear. It’s here, in the city?”
+Vahr stared at the floor. Vasher let him hang for a few moments, and could see that the reality of the situation was clear to him. Finally, Vahr looked up atVasher. “That ... thing you bear. It’s here, in the city?”
 
 Vasher nodded.
 
@@ -179,7 +180,7 @@ Vahr didn’t move. He looked numb. Then, just as Vasher began to worry that the
 
 “My life to yours,” Vahr Commanded, a hint of despair in his voice. “My Breath become yours.”
 
-The Breath flooded into Vasher, and everything became vibrant. His brown cloak now seemed deep and rich in color. The blood on the floor was intensely red, as if aflame. Even Vahr’s skin seemed a masterpiece of color, the surface marked by deep black hairs, blue bruises, and sharp red cuts. It had been years since Vasher had felt such . . . life.
+The Breath flooded into Vasher, and everything became vibrant. His brown cloak now seemed deep and rich in color. The blood on the floor was intensely red, as if aflame. Even Vahr’s skin seemed a masterpiece of color, the surface marked by deep black hairs, blue bruises, and sharp red cuts. It had been years since Vasher had felt such ... life.
 
 He gasped, falling to his knees as it overwhelmed him, and he had to drop a hand to the stone floor to keep himself from toppling over. How did I live without this?
 
@@ -217,4 +218,4 @@ I knew you’d be impressed, Nightblood said, sounding satisfied.
 `;
 
 const warbreakerSentences = splitIntoSentences(warbreakerText);
-console.log(warbreakerSentences)
+console.log(warbreakerSentences);

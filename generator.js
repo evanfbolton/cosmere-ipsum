@@ -4,9 +4,9 @@
 const loremIpsum = new GenerateNewText();
 
 // Constructor function that creates an object with the sentences property
-async function GenerateNewText() {
+function GenerateNewText() {
     // Add property to the object
-    this.sentences = await warbreakerSentences
+    this.sentences = warbreakerSentences
 }
 
 // Method to the GenerateNewText constructor function that generates a random sentence
