@@ -8,16 +8,27 @@ function splitIntoSentences(text) {
     // Remove line breaks
     text = text.replace(/(\r\n|\n|\r)/gm, '');
 
+    // Replace ellipses with a temporary placeholder
+    const ellipsisPlaceholder = '__ELLIPSIS__';
+    text = text.replace(/\.\.\./g, ellipsisPlaceholder);
+
+    // Replace periods, exclamations, and question marks followed by quotation mark with placeholder
+    const periodQuotationPlaceholder = '__PERIOD_QUOTE__'
+    text = text.replace(/\."/g, periodQuotationPlaceholder)
+    const exclamationQuotationPlaceholder = '__EXCLAMATION_QUOTE__'
+    text = text.replace(/!"/g, exclamationQuotationPlaceholder)
+    const questionQuotationPlaceholder = '__QUESTION_QUOTE__'
+    text = text.replace(/\?"/g, questionQuotationPlaceholder)
+
     // Regular expression to match sentence endings (period, exclamation mark, or question mark)
-    // not followed by another period (to exclude ellipses) and followed by optional whitespace characters
-    // and then another sentence or the end of the string
-    const sentenceRegex = /(?<=[.!?])(?!\.)(?=\s|$)/g;
+    // followed by optional whitespace characters and then another sentence or the end of the string
+    const sentenceRegex = /(?<=[.!?])\s*/g;
 
     // Split the text into sentences
     const sentences = text.split(sentenceRegex);
 
-    // Remove any empty strings from the array
-    return sentences.filter(sentence => sentence.trim() !== '');
+    // Replace the placeholder with the original ellipses
+    return sentences.map(sentence => sentence.replace(ellipsisPlaceholder, '. . .')).filter(sentence => sentence.trim() !== '');
 }
 
 // Example usage
